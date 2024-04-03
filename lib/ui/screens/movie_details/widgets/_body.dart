@@ -69,12 +69,33 @@ class _Body extends StatelessWidget {
                   style: AppText.b1 + FontWeight.w700,
                 ),
                 Space.y.t20,
-                ...movie.comments.map((comment) {
-                  return CommentCard(
-                    comment: comment,
-                    onHide: () => screenState.hideComment(comment),
-                  );
-                }),
+                if (movie.comments.isEmpty)
+                  Center(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Space.y.t100,
+                        Icon(
+                          Iconsax.messages,
+                          color: AppTheme.c.grey,
+                          size: 30.un(),
+                        ),
+                        Space.y.t20,
+                        Text(
+                          'No comments yet\nBe the first to comment!',
+                          style: AppText.b2 + AppTheme.c.grey,
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
+                  )
+                else
+                  ...movie.comments.map((comment) {
+                    return CommentCard(
+                      comment: comment,
+                      onHide: () => screenState.hideComment(comment),
+                    );
+                  }),
                 Space.y.t100,
                 Space.y.t100,
               ],
