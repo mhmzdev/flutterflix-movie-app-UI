@@ -16,7 +16,7 @@ class BottomBar extends StatelessWidget {
     final currentPath = ModalRoute.of(context)!.settings.name;
 
     return Container(
-      padding: Space.a.t25,
+      padding: Space.a.t25 + Space.b.t20,
       width: AppMedia.width,
       decoration: AppProps.card,
       child: Row(
@@ -40,10 +40,11 @@ class BottomBar extends StatelessWidget {
                       size: 24,
                       color: isSelected ? AppTheme.c.primary : AppTheme.c.grey,
                     ),
-                    Space.y.t05,
+                    Space.y.t15,
                     Text(
                       item.value.label,
-                      style: AppText.s1,
+                      style: AppText.s1 +
+                          (isSelected ? AppTheme.c.primary : AppTheme.c.grey),
                     ),
                   ],
                 ),

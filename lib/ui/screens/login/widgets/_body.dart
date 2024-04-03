@@ -5,12 +5,14 @@ class _Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final authCubit = AuthCubit.c(context);
     final screenState = _ScreenState.s(context, true);
 
     return Screen(
       keyboardHandler: true,
       formKey: screenState.formKey,
       initialFormValue: _FormData.initialValues(),
+      overlayBuilders: const [_Listener()],
       child: SafeArea(
         child: ScrollColumnExpandable(
           padding: Space.a.t30,
@@ -53,7 +55,10 @@ class _Body extends StatelessWidget {
             ),
             Space.y.t30,
             AppButton(
-              onPressed: () {},
+              onPressed: () {
+                FocusScope.of(context);
+                screenState.onSubmit(authCubit);
+              },
               label: 'Login',
             ),
             Space.y.t30,

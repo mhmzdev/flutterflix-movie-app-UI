@@ -21,11 +21,12 @@ abstract class AppProps {
   ];
 
   static final card = BoxDecoration(
+    color: AppTheme.c.darkGrey,
     borderRadius: 6.radius(),
     boxShadow: [
       BoxShadow(
-        color: AppTheme.c.lightGrey,
-        blurRadius: 10,
+        color: AppTheme.c.grey,
+        blurRadius: 6,
       ),
     ],
   );

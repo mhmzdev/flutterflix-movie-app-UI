@@ -1,4 +1,5 @@
 abstract class AppRoutes {
+  static const movieDetails = '/movie-details';
   static const splash = '/splash';
   static const profile = '/profile';
   static const games = '/games';

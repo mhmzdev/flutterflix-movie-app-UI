@@ -5,15 +5,15 @@ class _Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Screen(
+    return Screen(
       keyboardHandler: true,
+      bottomBar: true,
       child: SafeArea(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            //
-          ],
+        child: Center(
+          child: Text(
+            'Coming soon...!',
+            style: AppText.b1 + AppTheme.c.grey,
+          ),
         ),
       ),
     );

@@ -3,11 +3,11 @@ import 'dart:math' as math;
 
 class RippleEffect extends StatefulWidget {
   const RippleEffect({
-    Key? key,
+    super.key,
     this.size = 80.0,
     this.color = Colors.blue,
     this.onPressed,
-  }) : super(key: key);
+  });
   final double size;
   final Color color;
   final VoidCallback? onPressed;

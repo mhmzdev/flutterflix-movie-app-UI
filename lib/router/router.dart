@@ -1,3 +1,4 @@
+import 'package:flutterflix/ui/screens/movie_details/movie_details.dart';
 import 'package:flutterflix/ui/screens/profile/profile.dart';
 import 'package:flutterflix/ui/screens/games/games.dart';
 import 'package:flutterflix/ui/screens/news/news.dart';
@@ -10,6 +11,7 @@ import 'package:flutterflix/ui/screens/splash/splash.dart';
 import 'routes.dart';
 
 final appRoutes = {
+  AppRoutes.movieDetails: (_) => const MovieDetailsScreen(),
   AppRoutes.splash: (_) => const SplashScreen(),
   AppRoutes.register: (_) => const RegisterScreen(),
   AppRoutes.login: (_) => const LoginScreen(),
@@ -56,7 +58,10 @@ class FadeRoute extends PageRouteBuilder {
           settings: settings,
           pageBuilder: (context, ani1, ani2) => child,
           transitionsBuilder: (context, ani1, ani2, child) {
-            return child;
+            return FadeTransition(
+              opacity: ani1,
+              child: child,
+            );
           },
         );
 }

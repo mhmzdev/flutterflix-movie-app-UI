@@ -6,6 +6,7 @@ class _Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Screen(
+      bottomBar: true,
       keyboardHandler: true,
       child: SafeArea(
         child: Column(
