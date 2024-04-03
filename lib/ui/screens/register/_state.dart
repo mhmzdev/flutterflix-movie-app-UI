@@ -6,4 +6,13 @@ class _ScreenState extends ChangeNotifier {
       Provider.of<_ScreenState>(context, listen: listen);
 
   final formKey = GlobalKey<FormBuilderState>();
+
+  void onSubmit(AuthCubit authCubit) {
+    final form = formKey.currentState!;
+    final isValid = form.saveAndValidate();
+    if (!isValid) return;
+
+    final data = form.value;
+    authCubit.register(data);
+  }
 }

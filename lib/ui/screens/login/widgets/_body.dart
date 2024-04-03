@@ -71,7 +71,7 @@ class _Body extends StatelessWidget {
                 ),
                 Space.x.t10,
                 TouchableOpacity(
-                  onTap: () {},
+                  onTap: () => AppRoutes.register.pushReplace(context),
                   child: Text(
                     'Sign Up',
                     style:

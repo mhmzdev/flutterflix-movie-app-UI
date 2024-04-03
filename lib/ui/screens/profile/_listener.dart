@@ -8,7 +8,7 @@ class _Listener extends StatelessWidget {
     return BlocConsumer<AuthCubit, AuthState>(
       listenWhen: AuthLogoutState.match,
       listener: (context, state) {
-        if (state.logout is AuthLoginSuccess) {
+        if (state.logout is AuthLogoutSuccess) {
           AppRoutes.login.pushReplace(context);
           AppToast.success(context, 'You have been logged out!');
         }

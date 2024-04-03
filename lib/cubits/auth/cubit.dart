@@ -44,7 +44,6 @@ class AuthCubit extends Cubit<AuthState> {
     ));
     try {
       final data = await _AuthProvider.register(values);
-
       final profile = await _AuthProvider.fetchUserProfile(data.uid);
 
       emit(state.copyWith(

@@ -9,8 +9,9 @@ class _AuthProvider {
 
   static Future<User> register(Map<String, dynamic> values) async {
     try {
-      final email = values['email'];
-      final password = values['password'];
+      final payload = Map<String, dynamic>.from(values);
+      final email = payload['email'];
+      final password = payload['password'];
 
       final result = (await auth.createUserWithEmailAndPassword(
         email: email.trim(),
@@ -18,8 +19,12 @@ class _AuthProvider {
       ))
           .user!;
 
+      payload.remove('password');
+      payload.remove('confirm');
+
       await users.doc(result.uid).set({
-        ...values,
+        'uid': result.uid,
+        ...payload,
         'createdAt': DateTime.now().toIso8601String(),
       });
 
