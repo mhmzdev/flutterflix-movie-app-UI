@@ -39,7 +39,7 @@ class BottomBar extends StatelessWidget {
                   children: [
                     Icon(
                       item.value.icon,
-                      size: 24,
+                      size: 9.un(),
                       color: isSelected ? AppTheme.c.primary : AppTheme.c.grey,
                     ),
                     Space.y.t15,
