@@ -59,6 +59,11 @@ class _Body extends StatelessWidget {
               title: 'Top Picks for You',
               movies: movies,
             ),
+            Space.y.t30,
+            _List(
+              title: 'Recently Added',
+              movies: movies,
+            ),
           ],
         ),
       ),

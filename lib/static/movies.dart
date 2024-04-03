@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:faker_dart/faker_dart.dart';
 import 'package:flutterflix/models/movie/comment.dart';
 import 'package:flutterflix/models/movie/movie.dart';
@@ -16,7 +18,7 @@ Movie generateMovie(int index) {
   final mov = Movie(
     title: faker.lorem.word(),
     image: 'assets/movies/${index + 1}.jpeg',
-    comments: List.generate(4, generateComment),
+    comments: List.generate(Random().nextInt(10), generateComment),
   );
 
   return mov;

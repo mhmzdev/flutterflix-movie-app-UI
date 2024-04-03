@@ -26,25 +26,7 @@ class _List extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           child: Row(
             children: movies.map((movie) {
-              return TouchableOpacity(
-                onTap: () => AppRoutes.movieDetails.push(
-                  context,
-                  arguments: {'movie': movie},
-                ),
-                child: Container(
-                  margin: Space.r.t20,
-                  decoration: AppProps.card.copyWith(
-                    image: DecorationImage(
-                      image: AssetImage(
-                        movie.image,
-                      ),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  height: 65.un(),
-                  width: 50.un(),
-                ),
-              );
+              return MovieCard(movie: movie);
             }).toList(),
           ),
         ),
