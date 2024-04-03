@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:flutterflix/configs/configs.dart';
@@ -16,7 +18,7 @@ class BottomBar extends StatelessWidget {
     final currentPath = ModalRoute.of(context)!.settings.name;
 
     return Container(
-      padding: Space.a.t25 + Space.b.t20,
+      padding: Space.a.t25 + (Platform.isIOS ? Space.b.t20 : Space.z),
       width: AppMedia.width,
       decoration: AppProps.card,
       child: Row(
